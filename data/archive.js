@@ -1,0 +1,143 @@
+window.__BRIEFING_ARCHIVE__ = [
+  {
+    "date": "2026-11-24",
+    "display_date": "2026년 11월 24일 화요일",
+    "reference_time": "오전 07:00 한국시간 기준",
+    "news_window": "전일 07:00~당일 07:00",
+    "opinion_window": "직전 72시간",
+    "sections": {
+      "breaking": [
+        {
+          "title": "젠슨 황, 사임 11일 만에 엔비디아 CEO 전격 복귀…주가 31% 이상 폭등",
+          "source": "NVIDIA·CNBC·한국경제",
+          "sentiment": null,
+          "summary": "엔비디아 이사회가 23일(현지 시각) 도널드 트럼프 대통령 등 미 행정부 고위층의 국가안보 리스크 없음 판단 및 개입 직후 젠슨 황의 사장·CEO·이사 복귀를 만장일치로 의결하면서, 엔비디아 주가가 하루 31% 이상 급등해 시가총액 약 1조 달러가 회복됐다. 다만 미 의회 여야 의원들이 공개 청문회와 진상 조사를 예고하면서 정치·지배구조 논란은 이어지고 있다.",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+          "access_tags": []
+        },
+        {
+          "title": "유엔 기후총회 COP31, 화석연료 전환 합의 실패로 17년 만에 결렬",
+          "source": "The Guardian",
+          "sentiment": "부정",
+          "summary": "튀르키예 안탈리아에서 열린 제31차 유엔 기후변화협약 당사국총회(COP31)가 화석연료 단계적 퇴출 문구가 빠진 최종 초안에 EU·영국·태평양 도서국 등이 반발하며 2009년 코펜하겐(COP15) 이후 처음으로 공식 합의 채택에 실패했다. 총회 결렬로 국제 기후 거버넌스의 만장일치 의사결정 구조 개편 요구가 거세지고 있다.",
+          "url": "https://www.theguardian.com/environment/2026/nov/23/failure-cop31-calls-urgent-reform-un-climate-summits",
+          "access_tags": []
+        }
+      ],
+      "domestic": [
+        {
+          "title": "이재명 대통령, 국정원장 강금실·외교 임웅순·통일 홍익표 등 5개 부처 중폭 개각 단행",
+          "source": "조선일보",
+          "sentiment": null,
+          "summary": "이재명 대통령은 23일 국가정보원장 후보자에 강금실 전 법무부 장관(임명 시 헌정사 첫 여성 수장), 외교부 임웅순·통일부 홍익표·행안부 한준호·문체부 강유정 후보자를 지명했다. 이번 인선으로 외교·안보 라인이 실용·조화 성향 인사로 재편되면서 향후 대미 관계와 대북 정책 기조 변화 여부가 주목된다.",
+          "url": "https://www.chosun.com/politics/blue_house/2026/11/24/IGBP72H3ENGP5A3MDWWJPP3BLM/",
+          "access_tags": [
+            "공개 정보 기반"
+          ]
+        },
+        {
+          "title": "삼성증권 '고객의 소리' 해킹으로 8,241명 개인정보 유출",
+          "source": "조선일보",
+          "sentiment": "부정",
+          "summary": "삼성증권은 21일 오후 홈페이지 '고객의 소리(VOC)' 접수 시스템에서 외부 비인가 침입을 확인했으며, 민원 첨부파일에 포함된 고객 8,241명의 성명·계좌번호·주소·연락처·운전면허번호 등 최대 13개 항목이 유출됐다고 23일 밝혔다. 사측은 해당 IP 차단 후 금융감독원과 KISA에 신고하고 유출 조회 시스템을 가동했다.",
+          "url": "https://www.chosun.com/economy/money/2026/11/23/ARL2LEBDRRCXHEZIWWM5WATQ7I/",
+          "access_tags": [
+            "공개 정보 기반"
+          ]
+        }
+      ],
+      "international": [
+        {
+          "title": "미 상무부, '엔비디아 칩 우회 반입 위험' 알리바바 자회사·메가스피드 등 7개사 블랙리스트 등재",
+          "source": "Forbes Middle East·Reuters",
+          "sentiment": null,
+          "summary": "미 상무부는 23일 첨단 AI 칩의 중국 우회 유입 위험을 이유로 싱가포르 클라우드 기업 메가스피드와 알리바바 싱가포르 자회사 에이펙스 엔터프라이즈 솔루션스 등 동남아 소재 7개 기업을 수출통제 목록(Entity List)에 추가했다. 알리바바 측은 규제 대상 칩을 전용한 적이 없다며 법적 대응을 예고했다.",
+          "url": "https://www.forbesmiddleeast.com/industry/business/us-blacklists-singapores-megaspeed-amid-nvidia-chip-diversion-investigation",
+          "access_tags": [
+            "공개 정보 기반"
+          ]
+        },
+        {
+          "title": "크라우드스트라이크, 439억 달러 규모 지스케일러 전액 주식 인수 합의",
+          "source": "TechCrunch·WSJ",
+          "sentiment": null,
+          "summary": "사이버보안 기업 크라우드스트라이크가 23일 클라우드 보안 기업 지스케일러를 약 439억 달러(약 440억 달러, 주당 1.135주 교환·약 34% 프리미엄)에 인수하기로 합의하며 자율형 AI 시대에 대응한 엔드포인트·제로트러스트 통합 플랫폼 출범을 선언했다. 합병 법인의 연간 반복 매출(ARR)은 100억 달러를 넘기며, 2027년 말 완료를 목표로 규제 심사를 거칠 예정이다.",
+          "url": "https://techcrunch.com/2026/11/23/crowdstrike-to-acquire-zscaler-for-44-billion/",
+          "access_tags": []
+        },
+        {
+          "title": "우크라이나, 리비아 벵가지 정박 러시아 신형 초계함 '메르쿠리'·수송선 해상 드론 타격",
+          "source": "BBC·WSJ",
+          "sentiment": null,
+          "summary": "우크라이나군이 지중해 리비아 동부 벵가지 항에 정박 중이던 러시아 해군 신형 초계함 '메르쿠리'와 군수 수송선 'MV 앙가라'를 장거리 해상 드론으로 공격해 격침·타격했다고 23일 밝혔다. 우크라이나는 유엔 헌장 제51조에 따른 정당한 자위권 행사라고 주장한 반면, 리비아 양측 세력이 반발하면서 전쟁 여파가 지중해로 확산되고 있다.",
+          "url": "https://www.bbc.co.uk/news/articles/cm894p88jzxpo",
+          "access_tags": []
+        },
+        {
+          "title": "9,000억 달러 투자 약정한 앤스로픽, IPO 이후에도 채권 '투기등급' 전망",
+          "source": "The Wall Street Journal",
+          "sentiment": "부정",
+          "summary": "2026년 11월 IPO를 통해 기업가치 약 1조 1,800억 달러로 평가받은 앤스로픽이 향후 다년간 약 9,000억 달러 규모의 데이터센터·전력·연산 인프라 지출을 약정한 가운데, 대규모 적자 구조로 인해 신용평가사들로부터 투기등급(정크, BB급)을 받을 것으로 월가는 예상하고 있다. 주식시장의 고평가와 채권시장의 상환 능력 평가 간 괴리가 커지면서 AI 인프라 보증·자금 조달 전반의 신용 리스크 우려가 부각됐다.",
+          "url": "https://www.wsj.com/finance/investing/anthropic-committed-to-spend-900-billion-wall-street-expects-its-debt-to-be-junk-5514d55d",
+          "access_tags": [
+            "공개 정보 기반",
+            "구독 필요"
+          ]
+        },
+        {
+          "title": "미 노동부, 퇴직연금 401(k) 내 ESG 투자 억제 규정안 발의",
+          "source": "CNBC",
+          "sentiment": null,
+          "summary": "미 노동부는 23일 직장인 퇴직연금 플랜(401(k) 등)에서 환경·사회·지배구조(ESG) 펀드 편입을 억제하는 새 규정안을 공식 제안했다. 바이든 행정부 시절 완화됐던 연금 운용사의 비재무적 요소 고려 기준을 다시 엄격히 제한해 자산운용 업계의 ESG 상품 운용에 제동을 거는 조치다.",
+          "url": "https://www.cnbc.com/2026/11/23/labor-department-esg-401k-rule.html",
+          "access_tags": [
+            "공개 정보 기반"
+          ]
+        }
+      ],
+      "opinion": [
+        {
+          "title": "Why Are We at the Mercy of the World’s Weirdest Men?",
+          "source": "The New York Times",
+          "author": "David French",
+          "core_claim": "현대 사회의 안보와 핵심 인프라는 민주적 견제를 받는 국가 정부가 아니라, 도덕적 규범과 예측 가능성에서 벗어난 소수 테크 억만장자·경영자(젠슨 황, 일론 머스크 등)의 손에 종속되어 있다.",
+          "arguments": "냉전 초기에는 핵무기 등 국가 명운을 가르는 전략 자산이 정부 통제 아래 있었으나, 오늘날에는 AI·글로벌 위성통신망·첨단 반도체 등 국가안보 핵심 기술이 개인적 일탈과 과대망상을 드러낸 소수 기업가에게 집중되어 있으며, 시장과 정치권마저 이들을 통제하지 못하고 끌려가고 있다고 지적한다.",
+          "new_perspective": "엔비디아 경영진 스캔들과 복귀 사태를 단순한 기업 윤리나 주가 변동 이슈가 아니라, '국가안보급 전략 기술의 사유화와 민주적 책임 부재'라는 냉전 이후 새로운 체제 취약성으로 재정의한다.",
+          "significance_limits": "빅테크 1인 지배 구조가 낳는 공공성·안보 공백을 설득력 있게 짚었으나, 공개 정보 기준 요약에서는 민간 혁신 속도를 해치지 않으면서 국가안보와 기업 거버넌스 책임을 어떻게 제도화할지 구체적 대안 제시는 확인되지 않는다.",
+          "url": "https://www.nytimes.com/2026/11/22/opinion/jensen-huang-ai-ethics-cold-war.html",
+          "access_tags": [
+            "공개 정보 기반",
+            "구독 필요"
+          ]
+        },
+        {
+          "title": "The trouble with the middle powers project",
+          "source": "Financial Times",
+          "author": "Gideon Rachman",
+          "core_claim": "캐나다·유럽·일본·호주 등 중견국들이 연대해 미·중 초강대국 의존도를 줄이려는 '중견국 프로젝트'는, AI와 연산 인프라의 미·중 양강 독점 앞에서 구조적 한계에 부딪힐 수밖에 없다.",
+          "arguments": "최첨단 AI 모델과 반도체, 컴퓨팅 용량이 미국과 중국에 압도적으로 집중되면서 여타 국가들은 소량의 연산 자원만 배분받는 소비국으로 전락하고 있으며, 중견국이 자율성을 확보하려 해도 안보·소프트웨어(미국)와 핵심 광물·제조 공급망(중국)에 대한 이중 의존을 동시에 끊기 어렵다는 점을 근거로 제시한다.",
+          "new_perspective": "중견국 연대 외교의 성패를 전통적인 무역·안보 다자주의가 아니라 'AI·컴퓨팅 주권의 비대칭성'이라는 기술 패권 구조와 직결시켜 기존 자율성 낙관론에 반론을 제기한다.",
+          "significance_limits": "한국을 비롯한 중견국 외교·산업 전략의 냉정한 제약을 환기하지만, 특정 반도체 소재·장비·전력 인프라·특화 AI 분야에서 중견국 연합이 갖는 부분적 교섭력과 지렛대 효과까지 과소평가할 여지가 있다.",
+          "url": "https://www.ft.com/content/cf3b03e3-3fbf-489b-a292-33596ea64eea?syn-25a6b1a6=1",
+          "access_tags": [
+            "공개 정보 기반",
+            "구독 필요"
+          ]
+        },
+        {
+          "title": "[한규섭 칼럼] 아무도 가보지 않은 대법원장 탄핵의 길",
+          "source": "동아일보",
+          "author": "한규섭",
+          "core_claim": "한덕수 전 총리 사건 파기환송 판결을 계기로 더불어민주당이 당론 추진 중인 조희대 대법원장 탄핵소추는 국내외 헌정사에서 유례를 찾기 힘든 극단적 경로이며, 실제 전원합의체 표결 구조에 비춰볼 때도 사법부 독립과 정치적 파장이 막대하다.",
+          "arguments": "한국 헌정사에서 1985년 유태흥 대법원장 탄핵안 발의는 민주화 이전이었고, 미국에서도 1804년 새뮤얼 체이스 대법관 탄핵소추 무죄 이후 사법부 수장 탄핵은 극히 드물었다는 비교헌정사적 선례를 짚는다. 아울러 한 전 총리 사건이 9 대 3으로 갈린 것을 비롯해 전원합의체 표결 데이터를 분석한 결과 '조희대·천대엽·오석준·엄상필·노경필 5인 축'과 '오경미·김성수 축' 등 내부 성향 구도가 확인된다고 분석한다.",
+          "new_perspective": "대법원장 탄핵 공방을 단순한 진영 논쟁이 아니라, 전원합의체 표결 데이터라는 정량적 근거와 해외 헌정사 사례를 결합해 사법부 내부 역학으로 풀어냈다.",
+          "significance_limits": "판결 표결 구조를 데이터로 설명한 점이 돋보이나, 판결 불신에서 비롯된 입법부 견제론이나 사법부 내부 자정 방안에 대한 반대 측 논거가 어디까지 다뤄졌는지는 공개 요약 범위만으로는 제한적으로 확인된다.",
+          "url": "https://www.donga.com/news/Opinion/article/all/20261123/135077404/2",
+          "access_tags": [
+            "공개 정보 기반"
+          ]
+        }
+      ]
+    }
+  }
+];

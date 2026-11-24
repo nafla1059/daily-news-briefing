@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FBF7F0" id="theme-meta" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="아침 브리핑" />
+  <title>매일 아침 브리핑</title>
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FBF7F0;
+      --surface: #FFFDF9;
+      --surface-muted: #F4EDE1;
+      --ink: #1A1816;
+      --ink-secondary: #5B544C;
+      --ink-tertiary: #7C7368;
+      --border: #E5DCCD;
+      --border-strong: #2A2521;
+      --accent: #8B2635;
+      --accent-soft: #F6E9EB;
+      --pos-fg: #1D6B42;
+      --pos-bg: #EBF5EE;
+      --neg-fg: #A62C2B;
+      --neg-bg: #FCECEB;
+      --access-fg: #665E55;
+      --access-bg: #EFE7D8;
+      --font-scale: 1;
+      --serif: "Noto Serif KR", Georgia, "AppleMyungjo", serif;
+      --sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #161412;
+      --surface: #1F1C19;
+      --surface-muted: #28231F;
+      --ink: #EFE9DF;
+      --ink-secondary: #B5ACA0;
+      --ink-tertiary: #8B8277;
+      --border: #312C27;
+      --border-strong: #CFC4B4;
+      --accent: #D97B86;
+      --accent-soft: #312023;
+      --pos-fg: #68C490;
+      --pos-bg: #192E23;
+      --neg-fg: #EE837E;
+      --neg-bg: #331D1D;
+      --access-fg: #BEB4A7;
+      --access-bg: #2A2520;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: calc(16px * var(--font-scale));
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.74;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-shell {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 18px 18px 64px;
+    }
+
+    /* Top utility bar */
+    .utility-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--ink-secondary);
+    }
+
+    .brand-tag {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-size: 0.72rem;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ctrl-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink-secondary);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+      line-height: 1.2;
+      transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .ctrl-btn:hover,
+    .ctrl-btn[aria-pressed="true"] {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Masthead */
+    .masthead {
+      padding: 20px 0 16px;
+      border-bottom: 2px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .masthead-kicker {
+      font-family: var(--sans);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--ink-tertiary);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .masthead-date {
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 5.5vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.22;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .masthead-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--ink-secondary);
+    }
+
+    .masthead-meta span::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .masthead-meta span:first-child::before {
+      content: "";
+    }
+
+    /* Archive navigation */
+    .archive-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .archive-nav-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    .nav-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.38;
+      cursor: not-allowed;
+    }
+
+    .date-select {
+      flex: 1;
+      max-width: 240px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: var(--sans);
+    }
+
+    /* Sticky section pills */
+    .section-pills {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+
+    .section-pills::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pill {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink-secondary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .pill-count {
+      font-size: 0.72rem;
+      color: var(--ink-tertiary);
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .briefing-section {
+      margin-top: 28px;
+      scroll-margin-top: 56px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--border-strong);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-num {
+      color: var(--accent);
+    }
+
+    .section-sub {
+      font-size: 0.76rem;
+      color: var(--ink-tertiary);
+    }
+
+    .empty-state {
+      padding: 18px 0;
+      color: var(--ink-tertiary);
+      font-size: 0.92rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* News item */
+    .story-card {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .story-card:last-child {
+      border-bottom: none;
+    }
+
+    .story-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .source-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 0.71rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .badge-pos {
+      color: var(--pos-fg);
+      background: var(--pos-bg);
+    }
+
+    .badge-neg {
+      color: var(--neg-fg);
+      background: var(--neg-bg);
+    }
+
+    .badge-access {
+      color: var(--access-fg);
+      background: var(--access-bg);
+      font-weight: 600;
+    }
+
+    .story-title {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.44;
+      margin: 0 0 8px;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .story-summary {
+      margin: 0 0 11px;
+      font-size: 0.96rem;
+      color: var(--ink);
+      line-height: 1.74;
+      word-break: keep-all;
+    }
+
+    .story-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .read-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* Opinion cards */
+    .opinion-card {
+      margin-top: 16px;
+      padding: 18px 18px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 4px;
+    }
+
+    .opinion-byline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      margin-bottom: 6px;
+    }
+
+    .opinion-byline strong {
+      color: var(--accent);
+    }
+
+    .opinion-title {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.42;
+      margin: 0 0 14px;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .opinion-grid {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .opinion-block {
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .opinion-block:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .opinion-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 2px;
+    }
+
+    .opinion-text {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.72;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .site-footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--ink-tertiary);
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .page-shell {
+        padding: 14px 15px 52px;
+      }
+      .opinion-card {
+        padding: 15px 14px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="utility-bar">
+      <span class="brand-tag">Morning Briefing · 매일 아침 브리핑</span>
+      <div class="controls">
+        <button type="button" class="ctrl-btn" id="font-dec" aria-label="글자 작게">가-</button>
+        <button type="button" class="ctrl-btn" id="font-reset" aria-label="기본 글자">가</button>
+        <button type="button" class="ctrl-btn" id="font-inc" aria-label="글자 크게">가+</button>
+        <button type="button" class="ctrl-btn" id="theme-toggle" aria-label="다크모드 전환">☾</button>
+      </div>
+    </div>
+
+    <header class="masthead">
+      <div class="masthead-kicker" id="masthead-kicker">매일 오전 07:00 KST · 국내외 주요 변화 &amp; 심층 오피니언</div>
+      <h1 class="masthead-date" id="masthead-date">불러오는 중...</h1>
+      <div class="masthead-meta" id="masthead-meta"></div>
+    </header>
+
+    <nav class="archive-nav" aria-label="날짜 선택">
+      <select class="date-select" id="date-select" aria-label="브리핑 날짜"></select>
+      <div class="archive-nav-btns">
+        <button type="button" class="nav-btn" id="prev-day">← 이전</button>
+        <button type="button" class="nav-btn" id="next-day">다음 →</button>
+      </div>
+    </nav>
+
+    <nav class="section-pills" id="section-pills" aria-label="구역 바로가기"></nav>
+
+    <main id="briefing-main"></main>
+
+    <footer class="site-footer" id="site-footer">
+      매일 오전 07:00(Asia/Seoul) 자동 수집·검증 브리핑 아카이브
+    </footer>
+  </div>
+
+  <script src="./data/archive.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var archive = Array.isArray(window.__BRIEFING_ARCHIVE__) ? window.__BRIEFING_ARCHIVE__ : [];
+      var currentIdx = 0;
+
+      function esc(str) {
+        return String(str || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function safeUrl(url) {
+        var u = String(url || "").trim();
+        return /^https?:\/\//i.test(u) ? u : "#";
+      }
+
+      function applyTheme(theme) {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+        var meta = document.getElementById("theme-meta");
+        if (theme === "dark") {
+          root.setAttribute("data-theme", "dark");
+          if (btn) btn.textContent = "☀";
+          if (meta) meta.setAttribute("content", "#161412");
+        } else {
+          root.removeAttribute("data-theme");
+          if (btn) btn.textContent = "☾";
+          if (meta) meta.setAttribute("content", "#FBF7F0");
+        }
+        try { localStorage.setItem("briefing_theme", theme); } catch (e) {}
+      }
+
+      function applyFontScale(scale) {
+        var clamped = Math.max(0.88, Math.min(1.24, scale));
+        document.documentElement.style.setProperty("--font-scale", clamped.toFixed(2));
+        try { localStorage.setItem("briefing_font_scale", clamped.toFixed(2)); } catch (e) {}
+        return clamped;
+      }
+
+      var savedTheme = "light";
+      var savedScale = 1.0;
+      try {
+        savedTheme = localStorage.getItem("briefing_theme") || "light";
+        var rawScale = parseFloat(localStorage.getItem("briefing_font_scale") || "1");
+        if (!isNaN(rawScale)) savedScale = rawScale;
+      } catch (e) {}
+
+      applyTheme(savedTheme);
+      savedScale = applyFontScale(savedScale);
+
+      document.getElementById("theme-toggle").addEventListener("click", function () {
+        var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        applyTheme(isDark ? "light" : "dark");
+      });
+      document.getElementById("font-dec").addEventListener("click", function () {
+        savedScale = applyFontScale(savedScale - 0.06);
+      });
+      document.getElementById("font-reset").addEventListener("click", function () {
+        savedScale = applyFontScale(1.0);
+      });
+      document.getElementById("font-inc").addEventListener("click", function () {
+        savedScale = applyFontScale(savedScale + 0.06);
+      });
+
+      function renderAccessBadges(tags) {
+        if (!Array.isArray(tags) || !tags.length) return "";
+        return tags
+          .map(function (t) {
+            return '<span class="badge badge-access">' + esc(t) + "</span>";
+          })
+          .join("");
+      }
+
+      function renderSentimentBadge(sentiment) {
+        if (sentiment === "긍정") return '<span class="badge badge-pos">긍정</span>';
+        if (sentiment === "부정") return '<span class="badge badge-neg">부정</span>';
+        return "";
+      }
+
+      function renderNewsSection(id, numSymbol, label, items, subText) {
+        var bodyHtml = "";
+        if (!items || !items.length) {
+          bodyHtml = '<div class="empty-state">선정 없음</div>';
+        } else {
+          bodyHtml = items
+            .map(function (item) {
+              var sourceHtml = item.source
+                ? '<span class="source-label">' + esc(item.source) + "</span>"
+                : "";
+              var sentHtml = renderSentimentBadge(item.sentiment);
+              var url = safeUrl(item.url);
+              var linkHtml =
+                url !== "#"
+                  ? '<a class="read-link" href="' +
+                    esc(url) +
+                    '" target="_blank" rel="noopener noreferrer">기사 읽기 ↗</a>'
+                  : "";
+              return (
+                '<article class="story-card">' +
+                '<div class="story-meta-top">' +
+                sourceHtml +
+                sentHtml +
+                "</div>" +
+                '<h3 class="story-title">' +
+                esc(item.title) +
+                "</h3>" +
+                '<p class="story-summary">' +
+                esc(item.summary) +
+                "</p>" +
+                '<div class="story-footer">' +
+                linkHtml +
+                renderAccessBadges(item.access_tags) +
+                "</div>" +
+                "</article>"
+              );
+            })
+            .join("");
+        }
+
+        return (
+          '<section class="briefing-section" id="sec-' +
+          id +
+          '">' +
+          '<div class="section-header">' +
+          '<h2 class="section-title"><span class="section-num">' +
+          esc(numSymbol) +
+          "</span> " +
+          esc(label) +
+          "</h2>" +
+          '<span class="section-sub">' +
+          esc(subText) +
+          "</span>" +
+          "</div>" +
+          bodyHtml +
+          "</section>"
+        );
+      }
+
+      function renderOpinionSection(items) {
+        var bodyHtml = "";
+        if (!items || !items.length) {
+          bodyHtml = '<div class="empty-state">선정 없음</div>';
+        } else {
+          bodyHtml = items
+            .map(function (item) {
+              var bylineParts = [];
+              if (item.source) bylineParts.push("<strong>" + esc(item.source) + "</strong>");
+              if (item.author) bylineParts.push(esc(item.author));
+              var bylineHtml = bylineParts.length
+                ? '<div class="opinion-byline">' + bylineParts.join(" · ") + "</div>"
+                : "";
+
+              var blocks = [
+                ["핵심 주장", item.core_claim],
+                ["주요 논거", item.arguments],
+                ["새로운 관점", item.new_perspective],
+                ["의미와 한계", item.significance_limits],
+              ]
+                .filter(function (pair) {
+                  return Boolean(pair[1]);
+                })
+                .map(function (pair) {
+                  return (
+                    '<div class="opinion-block">' +
+                    '<span class="opinion-label">' +
+                    esc(pair[0]) +
+                    "</span>" +
+                    '<p class="opinion-text">' +
+                    esc(pair[1]) +
+                    "</p>" +
+                    "</div>"
+                  );
+                })
+                .join("");
+
+              var url = safeUrl(item.url);
+              var linkHtml =
+                url !== "#"
+                  ? '<a class="read-link" href="' +
+                    esc(url) +
+                    '" target="_blank" rel="noopener noreferrer">원문 읽기 ↗</a>'
+                  : "";
+
+              return (
+                '<article class="opinion-card">' +
+                bylineHtml +
+                '<h3 class="opinion-title">' +
+                esc(item.title) +
+                "</h3>" +
+                '<div class="opinion-grid">' +
+                blocks +
+                "</div>" +
+                '<div class="story-footer">' +
+                linkHtml +
+                renderAccessBadges(item.access_tags) +
+                "</div>" +
+                "</article>"
+              );
+            })
+            .join("");
+        }
+
+        return (
+          '<section class="briefing-section" id="sec-opinion">' +
+          '<div class="section-header">' +
+          '<h2 class="section-title"><span class="section-num">④</span> 사설·오피니언</h2>' +
+          '<span class="section-sub">직전 72시간 심층 분석</span>' +
+          "</div>" +
+          bodyHtml +
+          "</section>"
+        );
+      }
+
+      function renderDay(idx) {
+        if (!archive.length) {
+          document.getElementById("masthead-date").textContent = "아직 브리핑이 없습니다";
+          document.getElementById("briefing-main").innerHTML =
+            '<div class="empty-state">옵시디언 뉴스 브리핑 폴더에 날짜별 브리핑이 생성되면 여기에 표시됩니다.</div>';
+          return;
+        }
+        currentIdx = Math.max(0, Math.min(archive.length - 1, idx));
+        var day = archive[currentIdx];
+
+        document.title = (day.display_date || day.date) + " · 매일 아침 브리핑";
+        document.getElementById("masthead-date").textContent = day.display_date || day.date;
+
+        var metaSpans = [];
+        if (day.reference_time) metaSpans.push("<span>" + esc(day.reference_time) + "</span>");
+        if (day.news_window) metaSpans.push("<span>뉴스 " + esc(day.news_window) + "</span>");
+        if (day.opinion_window) metaSpans.push("<span>오피니언 " + esc(day.opinion_window) + "</span>");
+        document.getElementById("masthead-meta").innerHTML = metaSpans.join("");
+
+        var selectEl = document.getElementById("date-select");
+        selectEl.value = day.date;
+        document.getElementById("prev-day").disabled = currentIdx >= archive.length - 1;
+        document.getElementById("next-day").disabled = currentIdx <= 0;
+
+        var sec = day.sections || {};
+        var breaking = sec.breaking || [];
+        var domestic = sec.domestic || [];
+        var international = sec.international || [];
+        var opinion = sec.opinion || [];
+
+        document.getElementById("section-pills").innerHTML = [
+          ["breaking", "① 속보", breaking.length],
+          ["domestic", "② 국내", domestic.length],
+          ["international", "③ 해외", international.length],
+          ["opinion", "④ 오피니언", opinion.length],
+        ]
+          .map(function (p) {
+            return (
+              '<a class="pill" href="#sec-' +
+              p[0] +
+              '">' +
+              esc(p[1]) +
+              '<span class="pill-count">' +
+              p[2] +
+              "</span></a>"
+            );
+          })
+          .join("");
+
+        document.getElementById("briefing-main").innerHTML =
+          renderNewsSection("breaking", "①", "속보", breaking, breaking.length + "건") +
+          renderNewsSection("domestic", "②", "국내", domestic, domestic.length + "건") +
+          renderNewsSection("international", "③", "해외", international, international.length + "건") +
+          renderOpinionSection(opinion);
+
+        try {
+          var url = new URL(window.location.href);
+          url.searchParams.set("date", day.date);
+          window.history.replaceState({}, "", url.toString());
+        } catch (e) {}
+      }
+
+      function initArchive() {
+        var selectEl = document.getElementById("date-select");
+        if (!archive.length) {
+          selectEl.style.display = "none";
+          document.getElementById("prev-day").style.display = "none";
+          document.getElementById("next-day").style.display = "none";
+          renderDay(0);
+          return;
+        }
+
+        selectEl.innerHTML = archive
+          .map(function (d) {
+            return '<option value="' + esc(d.date) + '">' + esc(d.display_date || d.date) + "</option>";
+          })
+          .join("");
+
+        var startIdx = 0;
+        try {
+          var qDate = new URLSearchParams(window.location.search).get("date");
+          if (qDate) {
+            var found = archive.findIndex(function (d) { return d.date === qDate; });
+            if (found >= 0) startIdx = found;
+          }
+        } catch (e) {}
+
+        selectEl.addEventListener("change", function () {
+          var idx = archive.findIndex(function (d) { return d.date === selectEl.value; });
+          if (idx >= 0) renderDay(idx);
+        });
+        document.getElementById("prev-day").addEventListener("click", function () {
+          if (currentIdx < archive.length - 1) renderDay(currentIdx + 1);
+        });
+        document.getElementById("next-day").addEventListener("click", function () {
+          if (currentIdx > 0) renderDay(currentIdx - 1);
+        });
+
+        renderDay(startIdx);
+      }
+
+      if (archive.length) {
+        initArchive();
+      } else {
+        fetch("./data/archive.json")
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (Array.isArray(data)) archive = data;
+            initArchive();
+          })
+          .catch(function () { initArchive(); });
+      }
+    })();
+  </script>
+</body>
+</html>

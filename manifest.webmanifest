@@ -1,0 +1,16 @@
+{
+  "name": "매일 아침 브리핑",
+  "short_name": "아침 브리핑",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FBF7F0",
+  "theme_color": "#FBF7F0",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
