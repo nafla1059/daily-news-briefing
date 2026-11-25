@@ -5,12 +5,18 @@ window.__BRIEFING_ARCHIVE__ = [
     "reference_time": "오전 07:00 한국시간 기준",
     "news_window": "전일 07:00~당일 07:00",
     "opinion_window": "직전 72시간",
+    "executive_brief": [
+      "미·중 기술·권력 지형이 동시에 흔들렸다. 화웨이가 미국 법원에서 영업비밀 절도·대이란 제재 위반 등 10개 혐의에 유죄 평결을 받았고, 중국에서는 시진핑 후계 후보군인 천지닝 상하이 당서기가 반부패 조사에 들어가 20년 만의 현직 상하이 서기 낙마가 현실화됐다.",
+      "전날 젠슨 황 복귀 랠리는 하루 만에 냉각됐다. 앤스로픽이 상장 4거래일 만에 공모가(83달러) 아래로 밀리고 엔비디아(-5.86%)와 반도체 지수가 급락하면서 AI 인프라 투자 지속성에 대한 경계심이 다시 고개를 들었다.",
+      "국내에선 러시아 군용기 울릉도 초근접으로 사상 첫 경계경보가 발령되고 EU가 한국산 하이브리드차 세이프가드 쿼터를 확정한 가운데, 서울 지하철 파업은 새벽 타결됐으며 통계는 30대 미혼율 53.1% 돌파라는 구조적 인구 변화를 확인해 줬다."
+    ],
     "sections": {
       "breaking": [
         {
           "title": "화웨이, 미 형사재판서 영업비밀 절도·대이란 제재 위반 등 10개 혐의 유죄 평결",
           "source": "BBC·Reuters·Bloomberg",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "24일(현지시간) 뉴욕 브루클린 연방법원 배심원단이 8년에 걸친 형사재판 끝에 화웨이에 대해 영업비밀 절도 공모·은행 및 전신 사기·자금세탁·대이란 제재 위반 등 12개 혐의 중 10개에 유죄를 평결했다. 가장 무거운 조직범죄(RICO) 및 사법방해 공모 혐의는 무죄가 선고됐으나, 미·중 기술 패권 갈등의 상징적 사건에서 미국 검찰이 결정적 승리를 거두며 화웨이의 글로벌 법적·사업적 압박이 한층 커지게 됐다.",
           "url": "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo",
           "access_tags": []
@@ -19,6 +25,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "시진핑 유력 후계 후보 천지닝 상하이 당서기, 반부패 조사 착수…현직 정치국원 4번째 낙마",
           "source": "Al Jazeera·FT·WSJ",
           "sentiment": null,
+          "is_followup": false,
           "summary": "24일 중국 중앙기율검사위원회가 차기 유력 지도자 후보로 꼽혀 온 천지닝(62) 중앙정치국 위원 겸 상하이시 당서기를 '심각한 기율·법률 위반' 혐의로 조사 중이라고 공식 발표했다. 2006년 천량위 이후 20년 만의 현직 상하이 서기 낙마이자 20차 당대회 이후 네 번째 현직 정치국원 숙청으로, 시진핑 주석의 고강도 반부패 사정이 민·군 최고위층 전반으로 확산되고 있음을 보여준다.",
           "url": "https://www.aljazeera.com/news/2026/11/24/xis-anti-corruption-campaign-targets-shanghai-party-chief-chen-jining",
           "access_tags": []
@@ -29,6 +36,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "러시아 군용기, 동해 카디즈 무단 진입·울릉도 영공 1km 앞 초근접…사상 첫 경계경보 발령",
           "source": "동아일보",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "24일 오전 러시아 군용기 수 대가 일주일 새 세 번째로 동해 한국방공식별구역(KADIZ)에 무단 진입해 울릉도 영공 약 1km 앞까지 초근접 비행함에 따라 공군 전투기가 긴급 출격하고 울릉군에 사상 첫 외국 군용기발 경계경보와 대피 재난문자가 발령됐다. 실제 영공 침범은 없었으나 경보 해제 안내 과정에서 행안부와 경북도의 문구 혼선이 빚어졌으며, 국방부는 주한 러시아 국방무관을 초치해 엄중 항의했다.",
           "url": "https://www.donga.com/news/Politics/article/all/20261125/135084631/2",
           "access_tags": []
@@ -37,6 +45,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "서울 지하철 1~8호선 노사 임단협 새벽 극적 타결…25일 총파업 철회·정상 운행",
           "source": "한국경제·경향신문",
           "sentiment": "긍정",
+          "is_followup": false,
           "summary": "서울교통공사 노사(1~3노조 모두)가 25일 새벽 총인건비 3.5% 이내 임금 인상, 2,212명 규모 인력 감축 계획 보류 및 연내 500명 신규 채용에 최종 합의했다. 이에 따라 25일 첫차부터 예고됐던 총파업이 전격 철회되며 수도권 출근길 교통 대란을 피하게 됐다.",
           "url": "https://www.hankyung.com/article/202611258089i",
           "access_tags": []
@@ -45,6 +54,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "'2025 인구주택총조사' 30대 미혼율 53.1% 사상 첫 절반 돌파…자녀 출산 의향 35.4%",
           "source": "한국경제",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "국가데이터처가 24일 발표한 5년 주기 표본조사 결과 30대 미혼 비중이 2020년(42.5%)보다 10.6%포인트 급등한 53.1%(남성 61.1%·여성 44.3%)로 사상 처음 절반을 넘어섰다. 19~49세 인구 중 자녀를 가질 계획이나 의향이 있다는 응답도 35.4%에 그쳐 만혼·비혼 확산과 구조적 저출생이 한층 심화됐음이 확인됐다.",
           "url": "https://www.hankyung.com/article/2026112479037",
           "access_tags": []
@@ -53,6 +63,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "EU, 12월 1일부터 한국산 하이브리드차 200일간 6만7,924대 수입 제한 세이프가드 발동",
           "source": "조선일보",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "유럽연합(EU) 집행위원회가 급증하는 중국산 하이브리드차 견제를 명분으로 12월 1일부터 내년 6월 18일까지 200일간 모든 원산지에 비차별 적용되는 세이프가드 잠정조치를 발동하며 한국산 무관세 수입 쿼터를 6만7,924대로 확정했다. 지난해 수출량에 성장률(약 15%)을 반영해 단기 타격은 제한적이나, 유럽 시장 내 국산 하이브리드차 수출 확대에 상한선이 씌워지며 중장기 통상 불확실성이 커졌다.",
           "url": "https://www.chosun.com/economy/industry-company/2026/11/24/CPGVY2HWSBA6HN3JJJOOMCBDOQ/",
           "access_tags": []
@@ -61,6 +72,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "정부, 'AI 커닝' 차단 위해 중고교 내신 금속탐지기 도입·적발 시 최대 퇴학 추진",
           "source": "동아일보",
           "sentiment": null,
+          "is_followup": false,
           "summary": "교육부와 고용노동부가 24일 국무회의에서 올해 2학기 고교 기말고사부터 스마트기기 사용 적발 시 당일 전 과목 0점 및 최대 퇴학 처분을 권고하고 시험 전 금속탐지기·매 교시 안경·복장 검사를 도입하는 대응 방안을 발표했다. 국가자격시험에도 전원 꺼진 전자기기 탐지기와 감독관 보디캠 착용을 도입하고 형사처벌을 최대 5년 이하 징역으로 상향하는 방안이 함께 추진된다.",
           "url": "https://www.donga.com/news/Society/article/all/20261125/135084629/2",
           "access_tags": []
@@ -71,6 +83,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "앤스로픽 상장 4거래일 만에 공모가 붕괴·엔비디아 5.9% 급락…'젠슨 황 복귀 랠리' 하루 만에 반전",
           "source": "CNBC·Bloomberg",
           "sentiment": "부정",
+          "is_followup": true,
           "summary": "24일(현지시간) 사상 최대 IPO로 주목받았던 앤스로픽 주가가 6.5% 떨어진 81.91달러로 마감해 상장 4거래일 만에 공모가(83달러)를 하회했고, 장중 시가총액 1조 달러 선마저 무너졌다. 전날 31% 폭등했던 엔비디아 역시 5.86% 급반락하며 필라델피아 반도체지수가 8% 하락하고 나스닥이 1.48% 떨어져 AI 투자 지속성에 대한 경계심이 다시 커졌다.",
           "url": "https://www.cnbc.com/2026/11/24/anthropic-stock-ipo-price.html",
           "access_tags": []
@@ -79,6 +92,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "프랑스 사노피, 미 제약사 인스메드 410억 달러 전액 현금 인수 합의…3년 만에 최대 제약 M&A",
           "source": "CNBC·WSJ",
           "sentiment": null,
+          "is_followup": false,
           "summary": "24일 프랑스 제약사 사노피가 미국 희귀·호흡기질환 전문 바이오기업 인스메드를 주당 175달러(46% 프리미엄), 총 410억 달러에 전액 현금 인수하기로 합의했다. 주력 블록버스터 '듀피젠트'의 2031년 특허 만료에 대비해 신약 '브린수프리' 등 연 100억 달러 이상 매출 잠재력을 지닌 파이프라인을 확보한 2023년 말 이후 글로벌 제약업계 최대 규모 거래다.",
           "url": "https://www.cnbc.com/2026/11/24/insmed-sanofi-deal-stock-pharma.html",
           "access_tags": []
@@ -87,6 +101,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "베네수엘라, 마두로 축출 10개월 만에 공공부채 2,375억 달러 공식 공개…초대형 채무조정 시동",
           "source": "Financial Times·Reuters",
           "sentiment": null,
+          "is_followup": false,
           "summary": "베네수엘라 정부가 24일 마두로 축출 10개월 만에 GDP의 약 242%에 달하는 총 2,375억 달러 규모의 공공부채 내역(유로본드 1,101억 달러·중국 등 양자채권 233억 달러·국영석유사 PDVSA 비금융채무 등)과 거시경제 계획('플랜 베네수엘라 레나세')을 공식 발표했다. 정부가 장기 디폴트 상태를 공식 인정하고 모든 채권단을 아우르는 포괄적 채무조정 추진을 선언하면서 사상 최대급 국채 구조조정의 막이 올랐다.",
           "url": "https://www.ft.com/content/5975ac9e-20a2-4c20-a0e8-805892253272",
           "access_tags": [
@@ -98,6 +113,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "예멘 후티 반군, 사우디 리야드 최고층 'PIF 타워' 재타격…금융지구 첫 인명피해 11명 부상",
           "source": "CNA·FT·Reuters",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "24일 친이란 예멘 후티 반군의 공중·드론 공격이 사우디아라비아 수도 리야드의 킹압둘라 금융지구(KAFD) 내 80층 국부펀드 본사(PIF 타워)를 닷새 만에 다시 타격해 11명이 부상했다. 리야드 핵심 금융지구 피격으로 첫 공식 인명피해가 발생하면서 사우디 주도 연합군이 강력 보복을 천명해 중동 안보 및 에너지·금융 허브 리스크가 고조되고 있다.",
           "url": "https://www.channelnewsasia.com/world/saudi-skyscraper-hit-again-coalition-slams-terrorist-attack-6579126",
           "access_tags": []
@@ -106,6 +122,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "미 CIA·국가정보국(ODNI), 공개정보(OSINT) 분석용 비기밀 네트워크 해킹 피해",
           "source": "CNN·AP·연합뉴스",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "미국 중앙정보국(CIA)과 국가정보국(ODNI)이 공개정보(OSINT) 분석에 활용하는 비기밀 전산망이 사이버 침해를 받아 일부 비기밀 정보와 타 연방기관 관련 데이터가 노출된 사실이 24일 보도됐다. 당국은 기밀 시스템이나 핵심 역량에는 피해가 없고 문제가 해결됐다고 밝혔으나, 최근 FBI·농무부 해킹에 이어 미국 정보·연방 기관의 사이버 보안 취약성에 대한 우려가 커지고 있다.",
           "url": "https://www.cnn.com/2026/11/24/politics/cia-odni-hack-unclassified-information",
           "access_tags": []
@@ -113,7 +130,8 @@ window.__BRIEFING_ARCHIVE__ = [
       ],
       "opinion": [
         {
-          "title": "Nvidia and Trump’s State Capitalism",
+          "title": "엔비디아와 트럼프의 국가자본주의",
+          "original_title": "Nvidia and Trump’s State Capitalism",
           "source": "The Wall Street Journal",
           "author": "Editorial Board",
           "core_claim": "도널드 트럼프 대통령이 엔비디아 이사회에 직접 개입해 젠슨 황 최고경영자(CEO)의 복귀를 밀어붙인 행위는 단순한 기업 인사를 넘어, 법치와 국가안보 기준을 정치적 편의와 단기 주가 부양 아래 종속시키는 위험한 '국가자본주의(state capitalism)'이자 정실자본주의로의 퇴행이다.",
@@ -127,7 +145,8 @@ window.__BRIEFING_ARCHIVE__ = [
           ]
         },
         {
-          "title": "The National Popular Vote and the End of the Electoral College as We Know It",
+          "title": "전국 국민투표 협약과 우리가 알던 선거인단 제도의 종말",
+          "original_title": "The National Popular Vote and the End of the Electoral College as We Know It",
           "source": "The New York Times",
           "author": "Jesse Wegman",
           "core_claim": "2026년 11월 중간선거에서 민주당이 주요 경합주의 주정부·주의회를 동시 장악(트라이펙타)함에 따라, 개헌 없이도 전국 최다 득표자가 미국 대통령에 당선되도록 하는 '전국 국민투표 주간 협약(NPVIC)'이 발효 문턱에 바짝 다가서며 사실상 현행 선거인단 제도의 종말이 가시권에 들어왔다.",
@@ -142,6 +161,7 @@ window.__BRIEFING_ARCHIVE__ = [
         },
         {
           "title": "[홍성수 칼럼] 공정한 시험이라는 신화",
+          "original_title": "",
           "source": "한겨레",
           "author": "홍성수",
           "core_claim": "'AI 커닝' 사태에 맞서 금속탐지기·감독 강화 등 통제 수단을 총동원하는 현재의 대응은 근본 해법이 아니며, 도구를 전면 배제한 획일적 암기 시험만이 공정하다는 한국 사회의 '시험 만능주의'와 '절차적 공정성 신화' 자체를 해체해야 한다.",
@@ -160,12 +180,14 @@ window.__BRIEFING_ARCHIVE__ = [
     "reference_time": "오전 07:00 한국시간 기준",
     "news_window": "전일 07:00~당일 07:00",
     "opinion_window": "직전 72시간",
+    "executive_brief": [],
     "sections": {
       "breaking": [
         {
           "title": "젠슨 황, 사임 11일 만에 엔비디아 CEO 전격 복귀…주가 31% 이상 폭등",
           "source": "NVIDIA·CNBC·한국경제",
           "sentiment": null,
+          "is_followup": false,
           "summary": "엔비디아 이사회가 23일(현지 시각) 도널드 트럼프 대통령 등 미 행정부 고위층의 국가안보 리스크 없음 판단 및 개입 직후 젠슨 황의 사장·CEO·이사 복귀를 만장일치로 의결하면서, 엔비디아 주가가 하루 31% 이상 급등해 시가총액 약 1조 달러가 회복됐다. 다만 미 의회 여야 의원들이 공개 청문회와 진상 조사를 예고하면서 정치·지배구조 논란은 이어지고 있다.",
           "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
           "access_tags": []
@@ -174,6 +196,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "유엔 기후총회 COP31, 화석연료 전환 합의 실패로 17년 만에 결렬",
           "source": "The Guardian",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "튀르키예 안탈리아에서 열린 제31차 유엔 기후변화협약 당사국총회(COP31)가 화석연료 단계적 퇴출 문구가 빠진 최종 초안에 EU·영국·태평양 도서국 등이 반발하며 2009년 코펜하겐(COP15) 이후 처음으로 공식 합의 채택에 실패했다. 총회 결렬로 국제 기후 거버넌스의 만장일치 의사결정 구조 개편 요구가 거세지고 있다.",
           "url": "https://www.theguardian.com/environment/2026/nov/23/failure-cop31-calls-urgent-reform-un-climate-summits",
           "access_tags": []
@@ -184,6 +207,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "이재명 대통령, 국정원장 강금실·외교 임웅순·통일 홍익표 등 5개 부처 중폭 개각 단행",
           "source": "조선일보",
           "sentiment": null,
+          "is_followup": false,
           "summary": "이재명 대통령은 23일 국가정보원장 후보자에 강금실 전 법무부 장관(임명 시 헌정사 첫 여성 수장), 외교부 임웅순·통일부 홍익표·행안부 한준호·문체부 강유정 후보자를 지명했다. 이번 인선으로 외교·안보 라인이 실용·조화 성향 인사로 재편되면서 향후 대미 관계와 대북 정책 기조 변화 여부가 주목된다.",
           "url": "https://www.chosun.com/politics/blue_house/2026/11/24/IGBP72H3ENGP5A3MDWWJPP3BLM/",
           "access_tags": [
@@ -194,6 +218,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "삼성증권 '고객의 소리' 해킹으로 8,241명 개인정보 유출",
           "source": "조선일보",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "삼성증권은 21일 오후 홈페이지 '고객의 소리(VOC)' 접수 시스템에서 외부 비인가 침입을 확인했으며, 민원 첨부파일에 포함된 고객 8,241명의 성명·계좌번호·주소·연락처·운전면허번호 등 최대 13개 항목이 유출됐다고 23일 밝혔다. 사측은 해당 IP 차단 후 금융감독원과 KISA에 신고하고 유출 조회 시스템을 가동했다.",
           "url": "https://www.chosun.com/economy/money/2026/11/23/ARL2LEBDRRCXHEZIWWM5WATQ7I/",
           "access_tags": [
@@ -206,6 +231,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "미 상무부, '엔비디아 칩 우회 반입 위험' 알리바바 자회사·메가스피드 등 7개사 블랙리스트 등재",
           "source": "Forbes Middle East·Reuters",
           "sentiment": null,
+          "is_followup": false,
           "summary": "미 상무부는 23일 첨단 AI 칩의 중국 우회 유입 위험을 이유로 싱가포르 클라우드 기업 메가스피드와 알리바바 싱가포르 자회사 에이펙스 엔터프라이즈 솔루션스 등 동남아 소재 7개 기업을 수출통제 목록(Entity List)에 추가했다. 알리바바 측은 규제 대상 칩을 전용한 적이 없다며 법적 대응을 예고했다.",
           "url": "https://www.forbesmiddleeast.com/industry/business/us-blacklists-singapores-megaspeed-amid-nvidia-chip-diversion-investigation",
           "access_tags": [
@@ -216,6 +242,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "크라우드스트라이크, 439억 달러 규모 지스케일러 전액 주식 인수 합의",
           "source": "TechCrunch·WSJ",
           "sentiment": null,
+          "is_followup": false,
           "summary": "사이버보안 기업 크라우드스트라이크가 23일 클라우드 보안 기업 지스케일러를 약 439억 달러(약 440억 달러, 주당 1.135주 교환·약 34% 프리미엄)에 인수하기로 합의하며 자율형 AI 시대에 대응한 엔드포인트·제로트러스트 통합 플랫폼 출범을 선언했다. 합병 법인의 연간 반복 매출(ARR)은 100억 달러를 넘기며, 2027년 말 완료를 목표로 규제 심사를 거칠 예정이다.",
           "url": "https://techcrunch.com/2026/11/23/crowdstrike-to-acquire-zscaler-for-44-billion/",
           "access_tags": []
@@ -224,6 +251,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "우크라이나, 리비아 벵가지 정박 러시아 신형 초계함 '메르쿠리'·수송선 해상 드론 타격",
           "source": "BBC·WSJ",
           "sentiment": null,
+          "is_followup": false,
           "summary": "우크라이나군이 지중해 리비아 동부 벵가지 항에 정박 중이던 러시아 해군 신형 초계함 '메르쿠리'와 군수 수송선 'MV 앙가라'를 장거리 해상 드론으로 공격해 격침·타격했다고 23일 밝혔다. 우크라이나는 유엔 헌장 제51조에 따른 정당한 자위권 행사라고 주장한 반면, 리비아 양측 세력이 반발하면서 전쟁 여파가 지중해로 확산되고 있다.",
           "url": "https://www.bbc.co.uk/news/articles/cm894p88jzxpo",
           "access_tags": []
@@ -232,6 +260,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "9,000억 달러 투자 약정한 앤스로픽, IPO 이후에도 채권 '투기등급' 전망",
           "source": "The Wall Street Journal",
           "sentiment": "부정",
+          "is_followup": false,
           "summary": "2026년 11월 IPO를 통해 기업가치 약 1조 1,800억 달러로 평가받은 앤스로픽이 향후 다년간 약 9,000억 달러 규모의 데이터센터·전력·연산 인프라 지출을 약정한 가운데, 대규모 적자 구조로 인해 신용평가사들로부터 투기등급(정크, BB급)을 받을 것으로 월가는 예상하고 있다. 주식시장의 고평가와 채권시장의 상환 능력 평가 간 괴리가 커지면서 AI 인프라 보증·자금 조달 전반의 신용 리스크 우려가 부각됐다.",
           "url": "https://www.wsj.com/finance/investing/anthropic-committed-to-spend-900-billion-wall-street-expects-its-debt-to-be-junk-5514d55d",
           "access_tags": [
@@ -243,6 +272,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "title": "미 노동부, 퇴직연금 401(k) 내 ESG 투자 억제 규정안 발의",
           "source": "CNBC",
           "sentiment": null,
+          "is_followup": false,
           "summary": "미 노동부는 23일 직장인 퇴직연금 플랜(401(k) 등)에서 환경·사회·지배구조(ESG) 펀드 편입을 억제하는 새 규정안을 공식 제안했다. 바이든 행정부 시절 완화됐던 연금 운용사의 비재무적 요소 고려 기준을 다시 엄격히 제한해 자산운용 업계의 ESG 상품 운용에 제동을 거는 조치다.",
           "url": "https://www.cnbc.com/2026/11/23/labor-department-esg-401k-rule.html",
           "access_tags": [
@@ -253,6 +283,7 @@ window.__BRIEFING_ARCHIVE__ = [
       "opinion": [
         {
           "title": "Why Are We at the Mercy of the World’s Weirdest Men?",
+          "original_title": "",
           "source": "The New York Times",
           "author": "David French",
           "core_claim": "현대 사회의 안보와 핵심 인프라는 민주적 견제를 받는 국가 정부가 아니라, 도덕적 규범과 예측 가능성에서 벗어난 소수 테크 억만장자·경영자(젠슨 황, 일론 머스크 등)의 손에 종속되어 있다.",
@@ -267,6 +298,7 @@ window.__BRIEFING_ARCHIVE__ = [
         },
         {
           "title": "The trouble with the middle powers project",
+          "original_title": "",
           "source": "Financial Times",
           "author": "Gideon Rachman",
           "core_claim": "캐나다·유럽·일본·호주 등 중견국들이 연대해 미·중 초강대국 의존도를 줄이려는 '중견국 프로젝트'는, AI와 연산 인프라의 미·중 양강 독점 앞에서 구조적 한계에 부딪힐 수밖에 없다.",
@@ -281,6 +313,7 @@ window.__BRIEFING_ARCHIVE__ = [
         },
         {
           "title": "[한규섭 칼럼] 아무도 가보지 않은 대법원장 탄핵의 길",
+          "original_title": "",
           "source": "동아일보",
           "author": "한규섭",
           "core_claim": "한덕수 전 총리 사건 파기환송 판결을 계기로 더불어민주당이 당론 추진 중인 조희대 대법원장 탄핵소추는 국내외 헌정사에서 유례를 찾기 힘든 극단적 경로이며, 실제 전원합의체 표결 구조에 비춰볼 때도 사법부 독립과 정치적 파장이 막대하다.",

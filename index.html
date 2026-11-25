@@ -357,6 +357,44 @@
       font-weight: 600;
     }
 
+    .badge-followup {
+      color: #7A4B1E;
+      background: #F5EADB;
+    }
+
+    html[data-theme="dark"] .badge-followup {
+      color: #E6B57E;
+      background: #33271A;
+    }
+
+    /* Executive brief */
+    .exec-brief {
+      margin-top: 22px;
+      padding: 15px 17px;
+      background: var(--surface-muted);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+    }
+
+    .exec-brief-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+
+    .exec-brief-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+      font-size: 0.93rem;
+      line-height: 1.66;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
     .story-title {
       font-family: var(--serif);
       font-size: 1.08rem;
@@ -441,6 +479,15 @@
       margin: 0 0 14px;
       color: var(--ink);
       word-break: keep-all;
+    }
+
+    .opinion-orig-title {
+      font-size: 0.84rem;
+      color: var(--ink-tertiary);
+      font-style: italic;
+      line-height: 1.45;
+      margin: -8px 0 12px;
+      word-break: normal;
     }
 
     .opinion-grid {
@@ -626,6 +673,23 @@
         );
       }
 
+      function renderExecutiveBrief(lines) {
+        if (!Array.isArray(lines) || !lines.length) return "";
+        var itemsHtml = lines
+          .map(function (line) {
+            return "<li>" + esc(line) + "</li>";
+          })
+          .join("");
+        return (
+          '<aside class="exec-brief" aria-label="오늘의 핵심 흐름">' +
+          '<div class="exec-brief-title">오늘의 핵심 흐름 · EXECUTIVE BRIEF</div>' +
+          '<ul class="exec-brief-list">' +
+          itemsHtml +
+          "</ul>" +
+          "</aside>"
+        );
+      }
+
       function renderNewsSection(id, numSymbol, label, items, subText) {
         var bodyHtml = "";
         if (!items || !items.length) {
@@ -636,11 +700,19 @@
               var sourceHtml = item.source
                 ? '<span class="source-label">' + esc(item.source) + "</span>"
                 : "";
+              var followupHtml = item.is_followup
+                ? '<span class="badge badge-followup">후속</span>'
+                : "";
               var sentHtml = renderSentimentBadge(item.sentiment);
               var accessHtml = renderAccessBadges(item.access_tags);
               var metaHtml =
-                sourceHtml || sentHtml || accessHtml
-                  ? '<div class="story-meta-top">' + sourceHtml + sentHtml + accessHtml + "</div>"
+                sourceHtml || followupHtml || sentHtml || accessHtml
+                  ? '<div class="story-meta-top">' +
+                    sourceHtml +
+                    followupHtml +
+                    sentHtml +
+                    accessHtml +
+                    "</div>"
                   : "";
               return (
                 '<article class="story-card">' +
@@ -718,12 +790,17 @@
                 })
                 .join("");
 
+              var origTitleHtml = item.original_title
+                ? '<div class="opinion-orig-title">' + esc(item.original_title) + "</div>"
+                : "";
+
               return (
                 '<article class="opinion-card">' +
                 metaHtml +
                 '<h3 class="opinion-title">' +
                 renderLinkedTitle(item.title, item.url) +
                 "</h3>" +
+                origTitleHtml +
                 '<div class="opinion-grid">' +
                 blocks +
                 "</div>" +
@@ -794,6 +871,7 @@
           .join("");
 
         document.getElementById("briefing-main").innerHTML =
+          renderExecutiveBrief(day.executive_brief) +
           renderNewsSection("breaking", "①", "속보", breaking, breaking.length + "건") +
           renderNewsSection("domestic", "②", "국내", domestic, domestic.length + "건") +
           renderNewsSection("international", "③", "해외", international, international.length + "건") +
