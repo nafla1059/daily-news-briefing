@@ -4,6 +4,7 @@ window.__BRIEFING_ARCHIVE__ = [
     "display_date": "2026년 11월 25일 수요일",
     "reference_time": "오전 07:00 한국시간 기준",
     "news_window": "전일 07:00~당일 07:00",
+    "deepdive_window": "",
     "opinion_window": "직전 72시간",
     "executive_brief": [
       "미·중 기술·권력 지형이 동시에 흔들렸다. 화웨이가 미국 법원에서 영업비밀 절도·대이란 제재 위반 등 10개 혐의에 유죄 평결을 받았고, 중국에서는 시진핑 후계 후보군인 천지닝 상하이 당서기가 반부패 조사에 들어가 20년 만의 현직 상하이 서기 낙마가 현실화됐다.",
@@ -128,6 +129,7 @@ window.__BRIEFING_ARCHIVE__ = [
           "access_tags": []
         }
       ],
+      "deepdive": [],
       "opinion": [
         {
           "title": "엔비디아와 트럼프의 국가자본주의",
@@ -179,6 +181,7 @@ window.__BRIEFING_ARCHIVE__ = [
     "display_date": "2026년 11월 24일 화요일",
     "reference_time": "오전 07:00 한국시간 기준",
     "news_window": "전일 07:00~당일 07:00",
+    "deepdive_window": "",
     "opinion_window": "직전 72시간",
     "executive_brief": [],
     "sections": {
@@ -280,6 +283,7 @@ window.__BRIEFING_ARCHIVE__ = [
           ]
         }
       ],
+      "deepdive": [],
       "opinion": [
         {
           "title": "Why Are We at the Mercy of the World’s Weirdest Men?",

@@ -26,6 +26,8 @@
       --border-strong: #2A2521;
       --accent: #8B2635;
       --accent-soft: #F6E9EB;
+      --deep-accent: #1E425E;
+      --deep-soft: #EEF3F7;
       --pos-fg: #1D6B42;
       --pos-bg: #EBF5EE;
       --neg-fg: #A62C2B;
@@ -48,6 +50,8 @@
       --border-strong: #CFC4B4;
       --accent: #D97B86;
       --accent-soft: #312023;
+      --deep-accent: #83B4D9;
+      --deep-soft: #1B2630;
       --pos-fg: #68C490;
       --pos-bg: #192E23;
       --neg-fg: #EE837E;
@@ -522,6 +526,96 @@
       word-break: keep-all;
     }
 
+    /* Deep-dive cards */
+    .deepdive-card {
+      margin-top: 16px;
+      padding: 20px 20px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--deep-accent);
+      border-left: 3.5px solid var(--deep-accent);
+      border-radius: 4px;
+    }
+
+    .deepdive-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .deepdive-kicker {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--deep-accent);
+      background: var(--deep-soft);
+    }
+
+    .deepdive-byline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+    }
+
+    .deepdive-byline strong {
+      color: var(--deep-accent);
+    }
+
+    .deepdive-title {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.44;
+      margin: 0 0 14px;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .deepdive-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .deepdive-block {
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .deepdive-block:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .deepdive-label {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--deep-accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 3px;
+    }
+
+    .deepdive-text {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.78;
+      color: var(--ink);
+      word-break: keep-all;
+    }
+
+    .deepdive-prose {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      display: grid;
+      gap: 8px;
+    }
+
     .site-footer {
       margin-top: 40px;
       padding-top: 16px;
@@ -535,7 +629,8 @@
       .page-shell {
         padding: 14px 15px 52px;
       }
-      .opinion-card {
+      .opinion-card,
+      .deepdive-card {
         padding: 15px 14px 14px;
       }
     }
@@ -554,7 +649,7 @@
     </div>
 
     <header class="masthead">
-      <div class="masthead-kicker" id="masthead-kicker">매일 오전 07:00 KST · 국내외 주요 변화 &amp; 심층 오피니언</div>
+      <div class="masthead-kicker" id="masthead-kicker">매일 오전 07:00 KST · 국내외 주요 변화 · 심층취재 &amp; 오피니언</div>
       <h1 class="masthead-date" id="masthead-date">불러오는 중...</h1>
       <div class="masthead-meta" id="masthead-meta"></div>
     </header>
@@ -748,7 +843,92 @@
         );
       }
 
-      function renderOpinionSection(items) {
+      function renderDeepdiveSection(items, windowLabel) {
+        if (!Array.isArray(items) || !items.length) return "";
+        var bodyHtml = items
+          .map(function (item) {
+            var bylineParts = [];
+            if (item.source) bylineParts.push("<strong>" + esc(item.source) + "</strong>");
+            if (item.author) bylineParts.push(esc(item.author));
+            var bylineHtml = bylineParts.length
+              ? '<span class="deepdive-byline">' + bylineParts.join(" · ") + "</span>"
+              : "";
+            var accessHtml = renderAccessBadges(item.access_tags);
+            var metaHtml =
+              '<div class="deepdive-meta-top">' +
+              '<span class="deepdive-kicker">DEEP DIVE · 심층취재</span>' +
+              bylineHtml +
+              accessHtml +
+              "</div>";
+
+            var blocks = [
+              ["핵심 의제와 배경", item.context],
+              ["핵심 근거와 데이터", item.evidence],
+              ["쟁점과 파급효과", item.impact],
+              ["향후 관전 포인트", item.watch_points],
+            ]
+              .filter(function (pair) {
+                return Boolean(pair[1]);
+              })
+              .map(function (pair) {
+                return (
+                  '<div class="deepdive-block">' +
+                  '<span class="deepdive-label">' +
+                  esc(pair[0]) +
+                  "</span>" +
+                  '<p class="deepdive-text">' +
+                  esc(pair[1]) +
+                  "</p>" +
+                  "</div>"
+                );
+              })
+              .join("");
+
+            var proseHtml = "";
+            if (Array.isArray(item.body_paragraphs) && item.body_paragraphs.length) {
+              proseHtml =
+                '<div class="deepdive-prose">' +
+                item.body_paragraphs
+                  .map(function (p) {
+                    return '<p class="deepdive-text">' + esc(p) + "</p>";
+                  })
+                  .join("") +
+                "</div>";
+            }
+
+            var origTitleHtml = item.original_title
+              ? '<div class="opinion-orig-title">' + esc(item.original_title) + "</div>"
+              : "";
+
+            return (
+              '<article class="deepdive-card">' +
+              metaHtml +
+              '<h3 class="deepdive-title">' +
+              renderLinkedTitle(item.title, item.url) +
+              "</h3>" +
+              origTitleHtml +
+              (blocks ? '<div class="deepdive-grid">' + blocks + "</div>" : "") +
+              proseHtml +
+              "</article>"
+            );
+          })
+          .join("");
+
+        var subLabel = windowLabel ? windowLabel + " 글로벌 의제" : "직전 2주 글로벌 의제";
+        return (
+          '<section class="briefing-section" id="sec-deepdive">' +
+          '<div class="section-header">' +
+          '<h2 class="section-title"><span class="section-num">④</span> 심층취재</h2>' +
+          '<span class="section-sub">' +
+          esc(subLabel) +
+          "</span>" +
+          "</div>" +
+          bodyHtml +
+          "</section>"
+        );
+      }
+
+      function renderOpinionSection(items, numSymbol, windowLabel) {
         var bodyHtml = "";
         if (!items || !items.length) {
           bodyHtml = '<div class="empty-state">선정 없음</div>';
@@ -810,11 +990,16 @@
             .join("");
         }
 
+        var subLabel = windowLabel ? windowLabel + " 심층 분석" : "심층 분석";
         return (
           '<section class="briefing-section" id="sec-opinion">' +
           '<div class="section-header">' +
-          '<h2 class="section-title"><span class="section-num">④</span> 사설·오피니언</h2>' +
-          '<span class="section-sub">직전 72시간 심층 분석</span>' +
+          '<h2 class="section-title"><span class="section-num">' +
+          esc(numSymbol || "④") +
+          "</span> 사설·오피니언</h2>" +
+          '<span class="section-sub">' +
+          esc(subLabel) +
+          "</span>" +
           "</div>" +
           bodyHtml +
           "</section>"
@@ -837,6 +1022,7 @@
         var metaSpans = [];
         if (day.reference_time) metaSpans.push("<span>" + esc(day.reference_time) + "</span>");
         if (day.news_window) metaSpans.push("<span>뉴스 " + esc(day.news_window) + "</span>");
+        if (day.deepdive_window) metaSpans.push("<span>심층취재 " + esc(day.deepdive_window) + "</span>");
         if (day.opinion_window) metaSpans.push("<span>오피니언 " + esc(day.opinion_window) + "</span>");
         document.getElementById("masthead-meta").innerHTML = metaSpans.join("");
 
@@ -849,14 +1035,22 @@
         var breaking = sec.breaking || [];
         var domestic = sec.domestic || [];
         var international = sec.international || [];
+        var deepdive = sec.deepdive || [];
         var opinion = sec.opinion || [];
+        var hasDeepdive = deepdive.length > 0;
+        var opinionNum = hasDeepdive ? "⑤" : "④";
 
-        document.getElementById("section-pills").innerHTML = [
+        var pills = [
           ["breaking", "① 속보", breaking.length],
           ["domestic", "② 국내", domestic.length],
           ["international", "③ 해외", international.length],
-          ["opinion", "④ 오피니언", opinion.length],
-        ]
+        ];
+        if (hasDeepdive) {
+          pills.push(["deepdive", "④ 심층취재", deepdive.length]);
+        }
+        pills.push(["opinion", opinionNum + " 오피니언", opinion.length]);
+
+        document.getElementById("section-pills").innerHTML = pills
           .map(function (p) {
             return (
               '<a class="pill" href="#sec-' +
@@ -875,7 +1069,8 @@
           renderNewsSection("breaking", "①", "속보", breaking, breaking.length + "건") +
           renderNewsSection("domestic", "②", "국내", domestic, domestic.length + "건") +
           renderNewsSection("international", "③", "해외", international, international.length + "건") +
-          renderOpinionSection(opinion);
+          renderDeepdiveSection(deepdive, day.deepdive_window) +
+          renderOpinionSection(opinion, opinionNum, day.opinion_window);
 
         try {
           var url = new URL(window.location.href);
